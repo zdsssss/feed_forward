@@ -16,14 +16,7 @@ class layer_dense:
             self.outputs = self.a
         return self.outputs
   
-    def backward_propagation(self, error_ : np.ndarray) -> list[np.ndarray]:
-        print(error_)
+    def backward_propagation(self, loss : np.ndarray, error_ : np.ndarray) -> list[np.ndarray]:
+        self.wde = self.outputs
         print(self.outputs)
-        -(error_/self.outputs)
-        self.wde = (-(error_/self.outputs)+\
-                    ((1-error_)/(1-self.outputs))) *\
-                    self.activation_f.derivative(self.a) * \
-                    self.inputs
-        print(self.wde)
-        self.bde = error_ * self.activation_f.derivative
         return self.wde, self.bde

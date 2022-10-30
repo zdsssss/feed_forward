@@ -50,14 +50,5 @@ net.fit(
     loss_function=loss_f.Mse(),
 )
 
-# print()
-# print("-"*100)
-# for i in x_train:
-#     print(f"{i} : ",net.predict_debug(np.array(i)))
-#     print("-"*100)
-# print()
 for i in x_train:
     print(f"{i} {net.predict(i)}")
-# a = net.debug()
-# for i in a:
-#     print(i.weights)
