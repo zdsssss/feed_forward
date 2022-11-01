@@ -1,9 +1,8 @@
 import numpy as np
-import math
 
 class sigmoid:
     def __call__(self, x : np.ndarray) -> np.ndarray:
-        return 1.0 / (1.0 + math.e**(-x))
+        return 1.0 / (1.0 + np.e**(-x))
     @staticmethod
     def derivative(x : np.ndarray) -> np.ndarray:
         return sigmoid(x)*(1-sigmoid(x))
